@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
-  postContent: {
+  postContent:
+  {
     padding: 20,
     backgroundColor: "#FFF",
     marginLeft: 20,
@@ -10,40 +12,44 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderRadius: 5,
   },
-  postHead: {
+  postHead:
+  {
     borderBottomWidth: 1,
     borderColor: "#EEE",
     paddingBottom: 10,
     marginBottom: 10,
   },
-  postHeadTitle: {
+  postHeadTitle:
+  {
     color: "#333",
     fontWeight: 'bold',
   },
-  postHeadAuthor: {
+  postHeadAuthor:
+  {
     color: "#999",
   },
-  postText: {
+  postText:
+  {
     color: "#666",
   },
 });
 
-class Post extends Component {
-  render() {
-    return (
-      <View style={styles.postContent}>
-        <View style={styles.postHead}>
-          <Text style={styles.postHeadTitle}>{this.props.post.title}</Text>
-          <Text style={styles.postHeadAuthor}>{this.props.post.author}</Text>
-        </View>
-        <View>
-          <Text style={styles.postText}>
-          {this.props.post.post}
-          </Text>
-        </View>
-      </View>
-    );
-  }
-}
+const Post = ({ title, author, post }) => (
+  <View style={styles.postContent}>
+    <View style={styles.postHead}>
+      <Text style={styles.postHeadTitle}>{title}</Text>
+      <Text style={styles.postHeadAuthor}>{author}</Text>
+    </View>
+    <View>
+      <Text style={styles.postText}>{post}</Text>
+    </View>
+  </View>
+);
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  post: PropTypes.string.isRequired,
+};
 
 export default Post;

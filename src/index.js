@@ -8,38 +8,67 @@ import {
 
 import 'config/ReactotronConfig';
 import 'config/DevToolsConfig';
-import Post from 'component/post';
+import Post from 'component/Post';
 
 const styles = StyleSheet.create({
-  container: {
+  container:
+  {
     flex: 1,
     backgroundColor: '#EE7777',
   },
-  head: {
+  head:
+  {
     justifyContent: "center",
     alignItems: 'center',
     backgroundColor: '#FFF',
   },
-  headText: {
+  headText:
+  {
     margin: 20,
     color: "#333333",
     fontWeight: 'bold',
     fontSize: 18,
   },
-  postContent: {
+  postContent:
+  {
     flex: 1,
   },
 });
 
 class App extends Component {
   state = {
-    posts : [
-      {id: 1, title: 'Aprendendo React Native', author: 'Fábio Barbosa', post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-      {id: 2, title: 'Aprendendo React Native', author: 'Fábio Barbosa', post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-      {id: 3, title: 'Aprendendo React Native', author: 'Fábio Barbosa', post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-      {id: 4, title: 'Aprendendo React Native', author: 'Fábio Barbosa', post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-      {id: 5, title: 'Aprendendo React Native', author: 'Fábio Barbosa', post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-    ]
+    posts: [
+      {
+        id: 1,
+        title: 'Aprendendo React Native',
+        author: 'Fábio Barbosa',
+        post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      },
+      {
+        id: 2,
+        title: 'Aprendendo React Native',
+        author: 'Fábio Barbosa',
+        post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      },
+      {
+        id: 3,
+        title: 'Aprendendo React Native',
+        author: 'Fábio Barbosa',
+        post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      },
+      {
+        id: 4,
+        title: 'Aprendendo React Native',
+        author: 'Fábio Barbosa',
+        post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      },
+      {
+        id: 5,
+        title: 'Aprendendo React Native',
+        author: 'Fábio Barbosa',
+        post: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      },
+    ],
   };
   render() {
     return (
@@ -51,7 +80,7 @@ class App extends Component {
           <ScrollView>
             {
               this.state.posts.map(post => (
-                <Post key={post.id} post={post}></Post>
+                <Post key={post.id} title={post.title} author={post.author} post={post.post} />
               ))}
           </ScrollView>
         </View>
